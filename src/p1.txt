@@ -1,0 +1,19 @@
+Here is my output from a few runs:
+
+7053 347898375840389362
+6632 347898375840389362
+
+6625 347898375840389362
+8865 347898375840389362
+
+6847 347898375840389362
+6768 347898375840389362
+
+6889 347898375840389362
+7584 347898375840389362
+
+6961 347898375840389362
+7022 347898375840389362
+
+Both access methods differ in speed seemingly randomly. I would expect column major order to access the memory faster
+since the objects are laid out sequentially in memory and this is easier to go and find at runtime.
