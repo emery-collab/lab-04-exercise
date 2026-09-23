@@ -4,9 +4,6 @@
 #include <cassert>  // assert
 #include <cstdint>  // uint64_t, uint32_t
 
-// Expands the binary representation of input by a factor of scale.
-// e.g., expand(0b1111ull, 3) == 0b001001001001
-
 uint64_t expand(uint64_t input, uint32_t scale)
 {
     assert(scale >= 1);
@@ -27,6 +24,8 @@ uint64_t expand(uint64_t input, uint32_t scale)
     return output;
 }
 
+// essentially, we are just shifting over the bits, but offsetting y and z so that it ends up looking like
+// 0b x y z x y z in this order, representing a 3d space.
 inline uint64_t morton3d(uint64_t x, uint64_t y, uint64_t z){
     return  expand(x, 3) | (expand(y, 3) << 1) | (expand(z, 3) << 2);
 }

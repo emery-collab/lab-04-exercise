@@ -1,0 +1,8 @@
+The output was:
+248419                
+14619061
+
+This tells me first off that the code was correct, producing matching results since the assert did not fail.
+The Row Major indexing was faster than the Morton indexing, likely because the odd manner the data is stored which
+causes us (the cache) to have to jump around constantly when accessing it, whereas, similar to my previous answer,
+the Row Major indexing would be sequential and require less jumping around.
